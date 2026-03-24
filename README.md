@@ -1,38 +1,36 @@
-# mangojeong-todolist-app
+# Vue TodoList
 
-This template should help get you started developing with Vue 3 in Vite.
+KB IT's Your Life 7기에서 진행한 Vue 기반 TodoList 예제 toy project입니다.
 
-## Recommended IDE Setup
+## 기능
+- 할 일 추가
+- 할 일 삭제
+- 완료 상태 삭제선/상태 변경
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 기술 스택
+- Vue
+- Vite
+- Bootstrap
 
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
 ```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
+├── 📁 mangojeong-todolist-app
+│   ├── 📁 public
+│   │   └── 📄 favicon.ico
+│   ├── 📁 src
+│   │   ├── 📁 assets
+│   │   │   └── 🎨 main.css
+│   │   ├── 📁 components
+│   │   │   ├── 📄 InputTodo.vue
+│   │   │   ├── 📄 TodoList.vue
+│   │   │   └── 📄 TodoListItem.vue
+│   │   ├── 📄 App.vue
+│   │   └── 📄 main.js
+│   ├── ⚙️ .gitignore
+│   ├── 📝 README.md
+│   ├── 🌐 index.html
+│   ├── ⚙️ jsconfig.json
+│   ├── ⚙️ package-lock.json
+│   ├── ⚙️ package.json
+│   └── 📄 vite.config.js
+└── ⚙️ package-lock.json
 ```
