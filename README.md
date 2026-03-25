@@ -12,7 +12,7 @@ KB IT's Your Life 7기에서 진행한 Vue 기반 TodoList 예제 toy project입
 + Todo Item 개수 확인용 Status 창 추가
 
 
-
+```
 📁 mangojeong-todolist-app
 ├── 📁 public
 │   └── 📄 favicon.ico
@@ -33,3 +33,4 @@ KB IT's Your Life 7기에서 진행한 Vue 기반 TodoList 예제 toy project입
 ├── ⚙️ package-lock.json
 ├── ⚙️ package.json
 └── 📄 vite.config.js
+```
