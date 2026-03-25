@@ -2,6 +2,9 @@
 
 KB IT's Your Life 7기에서 진행한 Vue 기반 TodoList 예제 toy project입니다.
 
+TodoList_Advanced 개발일지
+[ https://holy-wish-a51.notion.site/TodoList_Refactoring_Advanced-32e08051a201804d8ea1c6ac1c69783e ]
+
 <img width="1196" height="235" alt="스크린샷 2026-03-25 224845" src="https://github.com/user-attachments/assets/fbbf316c-f1c5-4152-b3bc-ec7d19ce7894" />
 
 
