@@ -11,13 +11,12 @@
 </template>
 
 <script>
-import TodoListItem from "./TodoListItem.vue";
+import TodoListItem from './TodoListItem.vue';
 
 export default {
-  name: "TodoList",
+  name: 'TodoList',
   // TodoListItem  -> TodoList -> App 토스
   components: { TodoListItem },
-  // 부모에게서 받는다ㅣ
   props: {
     todoList: {
       type: Array,
@@ -25,6 +24,6 @@ export default {
     },
   },
 
-  emits: ["delete-todo", "toggle-completed"],
+  emits: ['delete-todo', 'toggle-completed'],
 };
 </script>

@@ -9,7 +9,7 @@
       {{ todoItem.todo }}
     </span>
 
-    <!-- botstpap 버튼 사용
+    <!-- bootstrap 버튼 사용
     li 전체 클릭 시 -> 완료토글
     내부의 삭제 버튼 클릭 시 -> 삭제
     @click.stop으로 버블링 안 막으면 삭제,완룥토글 같이 실행됨 -->
@@ -24,12 +24,12 @@
 
 <script>
 export default {
-  name: "TodoListItem",
+  name: 'TodoListItem',
   // 객체(obj로 전달
   props: {
     todoItem: { Object },
   },
 
-  emits: ["delete-todo", "toggle-completed"],
+  emits: ['delete-todo', 'toggle-completed'],
 };
 </script>

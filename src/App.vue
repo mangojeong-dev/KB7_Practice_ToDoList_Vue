@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container">
     <div class="card card-body bg-light">
-      <div class="title">mangojeoong's 투두두두두</div>
+      <div class="title">Todo</div>
     </div>
 
     <div class="card card-default card-borderless">
@@ -14,6 +14,7 @@
         자식 add-todo 이벤트 올라오면 -> 보모는 addTodo function 실행
         -->
         <InputTodo @add-todo="addTodo" />
+        <TodoStatus :cnt="cnt" />
         <!-- 
         1. inputTodo.vue에서 emit으로 받은 배열을 다시 TodoList.vue로 전달해야함
         2. TodoList.vue에서 다시 emit으로 삭제, 토글 이벤트 올리면 핸들링 함수 실행
@@ -29,31 +30,33 @@
 </template>
 
 <script>
-import TodoList from "./components/TodoList.vue";
-import InputTodo from "./components/InputTodo.vue";
+import TodoList from './components/TodoList.vue';
+import InputTodo from './components/InputTodo.vue';
+import TodoStatus from './components/TodoStatus.vue';
 
 let ts = new Date().getTime(); //todolist 배열 객체 속성 id로 쓰임
 
 export default {
-  name: "App",
-  components: { InputTodo, TodoList }, //쓸 component 불러오기
+  name: 'App',
+  components: { InputTodo, TodoList, TodoStatus }, //쓸 component 불러오기
 
   data() {
     return {
       todoList: [
-        { id: ts, todo: "자전거 타기", completed: false },
-        { id: ts + 1, todo: "공원 산책", completed: true },
-        { id: ts + 2, todo: "카페 가기", completed: false },
-        { id: ts + 3, todo: "Vue 원고 집필", completed: false },
+        { id: ts, todo: '공부', completed: false },
+        { id: ts + 1, todo: '운동', completed: true },
+        { id: ts + 2, todo: '자료구조 복습', completed: false },
+        { id: ts + 3, todo: 'Vue 프로젝트 기획', completed: false },
       ],
+      cnt: [4, 1, 3],
     };
   },
 
   methods: {
-    /* 
+    /*
     적용점
-    - 뭐라도 입력해야 올라가도록 todo.length에 따른 조건문 설정 
-    -Reference) SFC assignment basic lv. Input 과제  
+    - 뭐라도 입력해야 올라가도록 todo.length에 따른 조건문 설정
+    -Reference) SFC assignment basic lv. Input 과제
 *주의: InputTodo.vue에서 문자열 todo 그대로 전달받았음
     */
     addTodo(todo) {
@@ -69,19 +72,40 @@ export default {
           completed: false,
         });
       }
+      console.log('전체 개수 +1, 미완료 개수 +1');
+      this.cnt[0]++;
+      this.cnt[2]--;
     },
 
     //자식에서 id값(int형) 그대로 받음
     deleteTodo(id) {
       const i = this.todoList.findIndex((t) => t.id === id);
       this.todoList.splice(i, 1); // 1개 삭제 안 하고 그냥 splice(i)했더니 i부터 다 사라짐
-      console.log("deleteTodo() 함수 실행");
+      console.log('deleteTodo() 함수 실행');
+      if (this.todoList[i].completed === true) {
+        console.log('전체 개수 -1, 완료 개수 -1');
+        this.cnt[0]--;
+        this.cnt[1]--;
+      } else {
+        console.log('전체 개수 -1, 미완료 개수 -1');
+        this.cnt[0]--;
+        this.cnt[2]--;
+      }
     },
     //자식에서 id값(int형) 그대로 받음
     toggleCompleted(id) {
-      console.log("toggleCompleted() 함수 실행");
+      console.log('toggleCompleted() 함수 실행');
       const i = this.todoList.findIndex((t) => t.id === id);
       this.todoList[i].completed = !this.todoList[i].completed;
+      if (this.todoList[i].completed === true) {
+        console.log('완료 개수 +1, 미완료 개수 -1');
+        this.cnt[1]++;
+        this.cnt[2]--;
+      } else {
+        console.log('완료 개수 -1, 미완료 개수 +1');
+        this.cnt[1]--;
+        this.cnt[2]++;
+      }
     },
   },
 };
